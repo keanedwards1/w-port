@@ -1,0 +1,94 @@
+:root {
+  /* The site sits on water: deep blue surfaces, cream type, sand for links. */
+  --bg: #12124a;
+  --fg: #f4f1ea;
+  --muted: #c9c7dd;
+  --line: #3a3a86;
+  --surface: #1a1a5c;
+  --soft1: #22226c;
+  --soft2: #1c1c62;
+  --accent: #f4f1ea;
+  --on-accent: #12124a;
+  --accent-text: #ffd98a;
+  --sand: #d8c69c;
+  --night: #0c0c3a;
+  --tint: 6 11 64;
+  --error: #ffb4a8;
+
+  --display: 'Instrument Serif', 'Times New Roman', serif;
+  --body: 'Inter Tight Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  --font: var(--body);
+  --regular: 400;
+  --medium: 550;
+
+  /* Five type steps on the home page: wordmark (fitted), xl, l, m, s. */
+  --step-xl: clamp(44px, 5.4vw, 80px);
+  --step-l: clamp(22px, 2.5vw, 36px);
+  --step-m: 17px;
+  --step-s: 15px;
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --fast: 200ms;
+  --slow: 600ms;
+
+  --gutter: clamp(20px, 4vw, 64px);
+  --header: 72px;
+  --radius: 22px;
+  --radius-small: 10px;
+}
+
+/* On milky water the text turns navy. Panels that float above the page keep the dark colors. */
+html[data-tone='light'] {
+  --fg: #12124a;
+  --muted: #3a3868;
+  --line: rgb(18 18 74 / 0.25);
+  --accent: #12124a;
+  --on-accent: #f7f3ea;
+  --accent-text: #1f1fd1;
+}
+html[data-tone='light'] :is(.lead, .sheet, .drop-panel) {
+  --fg: #f4f1ea;
+  --muted: #c9c7dd;
+  --line: #3a3a86;
+  --accent: #f4f1ea;
+  --on-accent: #12124a;
+  --accent-text: #ffd98a;
+  color: var(--fg);
+}
+
+/* Directory pages stay cream at every scroll position. */
+html:has(.directory) {
+  background: #f4efe2;
+  --fg: #12124a;
+  --muted: #3a3868;
+  --line: rgb(18 18 74 / 0.25);
+  --accent: #12124a;
+  --on-accent: #f7f3ea;
+  --accent-text: #53617c;
+}
+html:has(.directory) .lead {
+  --fg: #f4f1ea;
+  --muted: #c9c7dd;
+  --line: #3a3a86;
+  --accent: #f4f1ea;
+  --on-accent: #12124a;
+  --accent-text: #ffd98a;
+  color: var(--fg);
+}
+
+/* Desaturated slate blue complements the warm cream water. */
+html:has(.directory) :is(.sheet, .drop-panel) {
+  --bg: #ececf0;
+  --fg: #30394b;
+  --muted: #626a79;
+  --line: rgb(64 78 104 / 0.2);
+  --soft1: #e0e3eb;
+  --soft2: #e5e7ed;
+  --accent: #3e4b64;
+  --on-accent: #f7f3ea;
+  --accent-text: #53617c;
+  color: var(--fg);
+}
